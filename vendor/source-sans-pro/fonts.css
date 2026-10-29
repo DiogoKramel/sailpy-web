@@ -1,0 +1,5 @@
+/* Source Sans Pro (SIL Open Font License), the font of the Bootstrap "Cosmo"
+   theme, bundled so the page does not load anything from Google Fonts */
+@font-face { font-family: 'Source Sans Pro'; font-style: normal; font-display: swap; font-weight: 300; src: url(source-sans-pro-latin-300-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Source Sans Pro'; font-style: normal; font-display: swap; font-weight: 400; src: url(source-sans-pro-latin-400-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Source Sans Pro'; font-style: normal; font-display: swap; font-weight: 700; src: url(source-sans-pro-latin-700-normal.woff2) format('woff2'); }

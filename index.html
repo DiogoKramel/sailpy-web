@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SailPy</title>
+  <meta name="description" content="SailPy - a preliminary design tool for sailboats. Developed by Diogo Kramel in 2019.">
+  <link rel="icon" href="assets/static/favicon.ico">
+  <link rel="stylesheet" href="vendor/source-sans-pro/fonts.css">
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap-cosmo.min.css">
+  <link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
+  <link rel="stylesheet" href="vendor/et-line-font/style.css">
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+  <!-- Landing page -->
+  <div id="landing" class="backgroundlanding" hidden>
+    <div class="landing-logo"><img src="assets/static/logoappwhite.png" height="50" alt="SailPy"></div>
+    <div class="middle">
+      <div class="jumbotron landingjumbo">
+        <h3 class="display-3">SailPy</h3>
+        <p class="lead">A preliminary design tool for sailboats</p>
+        <hr class="my-2">
+        <p class="justify">SailPy is an opensource Python application for conceptual sailboat design with an object-oriented approach. The sailboat is simulated in different conditions, to which optimization tools are applied to evaluate its performance, assisting the definition of the best set of dimensions in order to meet the user's needs. This library encourages suggestions, new features, improvements, and report of bugs. The scripts and issues being discussed can be found at the GitHub page linked in the page bottom.</p>
+        <hr class="my-2">
+        <br>
+        <a class="btn btn-secondary" href="#application" id="start-button"><span class="btnupdate">Start the analysis</span></a>
+        <p class="engine-note" data-engine-status></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application -->
+  <div id="application" hidden>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a href="#" class="navbar-brand-logo"><img src="assets/static/logoappwhite.png" height="50" alt="SailPy"></a>
+        <a href="#" class="navbar-brand">SailPy - A preliminary design tool for sailboats</a>
+        <div class="navbar-nav align-items-center">
+          <span class="badge engine-badge" data-engine-badge>Python: loading…</span>
+          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="#" id="reset-link" title="Clear everything saved in this browser and start again">Start over</a>
+        </div>
+      </div>
+    </nav>
+    <ul class="nav nav-tabs nav-fill sailpy-tabs" id="tabs">
+      <li class="nav-item"><a class="nav-link" href="#application/introduction" data-tab="introduction">Introduction</a></li>
+      <li class="nav-item"><a class="nav-link" href="#application/hull" data-tab="hull">Hull Dimensions</a></li>
+      <li class="nav-item"><a class="nav-link" href="#application/optimization" data-tab="optimization">Optimization</a></li>
+      <li class="nav-item"><a class="nav-link" href="#application/results" data-tab="results">Optimization Results</a></li>
+      <li class="nav-item"><a class="nav-link" href="#application/appendages" data-tab="appendages">Appendages, Sail and Polar diagram</a></li>
+      <li class="nav-item"><a class="nav-link" href="#application/about" data-tab="about">About</a></li>
+    </ul>
+    <div id="engine-error" class="container mt-3" hidden></div>
+    <main id="page-content"></main>
+  </div>
+
+  <footer class="footer-bar" id="footer">
+    <div class="container">
+      <div class="footer-row">
+        <a href="https://www.usp.br" target="_blank" rel="noopener"><img src="assets/static/logousp.png" height="35" alt="USP"></a>
+        <a href="https://www.poli.usp.br/" target="_blank" rel="noopener"><img src="assets/static/logopolitecnica.png" height="35" alt="Escola Politécnica"></a>
+        <a href="https://www.pnv.poli.usp.br/" target="_blank" rel="noopener"><img src="assets/static/logopnv.png" height="35" alt="PNV"></a>
+        <a href="https://www.capes.gov.br" target="_blank" rel="noopener"><img src="assets/static/logocapes.png" height="35" alt="CAPES"></a>
+        <span class="footer-text">Source code released under the <a href="https://opensource.org/licenses/MIT/" target="_blank" rel="noopener">MIT license</a>. Website and documentation licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.</span>
+        <a href="https://github.com/DiogoKramel/SailPy" target="_blank" rel="noopener"><img src="assets/static/logogithub.svg" height="35" alt="GitHub"></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="vendor/plotly/plotly.min.js"></script>
+  <script src="vendor/nouislider/nouislider.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
