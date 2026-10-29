@@ -858,11 +858,17 @@ function renderAppendages(root) {
 /* ------------------------------------------------------------- tab: about */
 
 function renderAbout(root) {
-  const person = (photo, name, role, text) => h('div', { class: 'col-md-6 mb-4' },
+  const person = (photo, name, role, text) => h('div', { class: 'col-lg-8 mb-4' },
     h('div', { class: 'about-person' },
       photo,
       h('div', {}, h('h5', { class: 'mb-0' }, name), h('div', { class: 'about-role' }, role), h('p', { class: 'mt-2 mb-0' }, text))));
   const initials = (txt) => h('div', { class: 'about-initials' }, txt);
+  // a photo that falls back to initials if the image file is not there
+  const photoOr = (src, alt, txt) => {
+    const img = h('img', { src, alt, class: 'about-photo' });
+    img.addEventListener('error', () => img.replaceWith(initials(txt)));
+    return img;
+  };
 
   root.append(h('div', { class: 'container mt-4 about' },
     h('div', { class: 'row' }, h('div', { class: 'col-lg-8' },
@@ -871,9 +877,9 @@ function renderAbout(root) {
       h('p', { class: 'justify' }, "SailPy was developed as part of a Master's research project at the Department of Naval Architecture and Ocean Engineering of the Polytechnic School (Escola Politécnica) of the University of São Paulo. Its aim is to show how the main dimensions of the hull affect performance in calm water and in waves, and to help find better sets of dimensions early in the design."))),
     h('h5', { class: 'mt-3 mb-3' }, 'People'),
     h('div', { class: 'row' },
-      person(h('img', { src: 'assets/static/diogo.png', alt: 'Diogo Kramel', class: 'about-photo' }), 'Diogo Kramel', 'Author and developer',
+      person(photoOr('assets/static/diogo.png', 'Diogo Kramel', 'DK'), 'Diogo Kramel', 'Author and developer',
         "Degree in Naval Architecture and Ocean Engineering and Master of Science from the University of São Paulo (USP), and a Master's degree in Maritime Spatial Planning from the University of the Azores, the University of Seville and Università Iuav di Venezia."),
-      person(initials('AS'), 'Prof. Dr. Alexandre Nicolaos Simos', 'Supervisor',
+      person(photoOr('assets/static/alexandre.jpg', 'Alexandre Nicolaos Simos', 'AS'), 'Prof. Dr. Alexandre Nicolaos Simos', 'Supervisor',
         'Department of Naval Architecture and Ocean Engineering, Polytechnic School of the University of São Paulo.')),
     h('div', { class: 'row' },
       h('div', { class: 'col-lg-8' },
